@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Developer page</title>
 </head>
 <body>
     <header>
-        <h1>Enrique Zavala Developer</h1>
+        <h1 class="titulo">Enrique Zavala <span>Developer</span></h1>
     </header>
     <nav>
         <a href="#">Inicio</a>
@@ -16,7 +21,7 @@
         <a href="#">Contacto</a>
     </nav>
     <section>
-        <h2>Desarrolldor full stack</h2>
+        <h2>Desarrollador full stack</h2>
         <!--
 category: Map
 tags: [navigation, location, travel, pin, position, marker]
@@ -158,6 +163,33 @@ unicode: "f78e"
 
     <section>
         <h2>Contacto</h2>
+        <form >
+          <fieldset>
+            <legend>Llena tus datos de contacto</legend>
+            <div>
+              <label>Nombre completo</label>
+              <input type="text" placeholder="Nombre completo"/>
+            </div>
+
+            <div>
+              <label>Teléfono</label>
+              <input type="tel" placeholder="Tu teléfono"/>
+            </div>
+
+            <div>
+              <label>Correo electrónico</label>
+              <input type="email" placeholder="Tu correo electrónico"/>
+            </div>
+
+            <div>
+              <label>Mensaje</label>
+              <textarea></textarea>
+            </div>
+            <div>
+              <input type="submit" value="Enviar"/>
+            </div>
+          </fieldset>
+        </form>
     </section>
 
 
