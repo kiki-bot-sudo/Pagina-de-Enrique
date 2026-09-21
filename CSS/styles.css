@@ -1,107 +1,141 @@
-:root{
-    --blanco: #ffffff;
-    --oscuro: #212121;
-    --primario: #ffc107;
-    --secundario: #0087a7;
-    --gris: #757575;
+:root {
+  --blanco: #ffffff;
+  --oscuro: #212121;
+  --primario: #ffc107;
+  --secundario: #26939f;
+  --gris: #757575;
+  --grisClaro: #b6b6b6;
 }
-
-
-/* Truco para uniformidad entre navegadores */
+ 
+/* Truco para uniformidad de texto entre navegadores */
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
-
 body {
-    font-size: 1.6rem;
+  font-size: 16px;
+  font-family: "Krub", sans-serif;
+  background-image: linear-gradient (to top, var(--grisClaro) 0%, var(--blanco) 100%);
 }
-
-h1{
-    font-size: 3.8rem;
+ 
+/*Tipografía*/
+ 
+h1 {
+  font-size: 3.8rem;
 }
-
-h2{
-    font-size: 2.8rem;
+ 
+h2 {
+  font-size: 2.8rem;
 }
-
-h3{
-    font-size: 1.8rem;
+ 
+h3 {
+  font-size: 1.8rem;
 }
-
-h1,h2,h3{
-    text-align: center;
+ 
+h1,
+h2,
+h3 {
+  text-align: center;
 }
-
-.my-title span{
-    font-size: 2rem;
+ 
+.my-title span {
+  font-size: 2rem;
 }
-
-.navegacion-principal{
-    background-color: var(--secundario);
-    /*Margin es por fuera y padding es por dentro*/
-    display: flex; /*Flexbox es para alinear elementos*/
-    justify-content: space-between;
-    font-weight: bold;
-    font-size: 2rem;
+ 
+.navegacion-principal {
+  /* Margin es por fuera y padding es por dentro */
+  display: flex; /* Flexbox está diseñado para alinear elementos en tus diseños */
+  /* justify-content para FILAS / align-items es para COLUMNAS (flex-direction)*/
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 2rem;
+  align-items: center;
 }
-
-.navegacion-principal a:hover{
-    background-color: var(--primario);
-    color: var(--oscuro);
+ 
+@media (min-width: 768px) {
+  .navegacion-principal {
+    flex-direction: row;
+  }
 }
-
-.navegacion-principal a{
-    display: flex;
-    color: var(--blanco);
-    text-decoration: none; /*Quita el subrayado de los links*/
-    padding: 1rem;
-    flex-direction: column;
-    font-weight: bold;
-    font-size: 2rem;
-    align-items: center;
+ 
+/* Al poner el cursor en el hipervínculo*/
+.navegacion-principal a:hover {
+  background-color: var(--primario);
+  color: var(--oscuro);
 }
-
-.contenedor{
-    max-width: 120rem;
-    width: 90%;
-    margin: 0 auto;
+ 
+.navegacion-principal a {
+  color: var(--blanco);
+  text-decoration: none; /* Remueve el estilo subrayado en el texto */
+  padding: 1rem;
 }
-
+ 
+.contenedor {
+  max-width: 120rem; /* 1200 pixeles porque 1 rem= 10px */
+  /* margin-top: 0; */
+  /* margin-bottom: 0; */
+  /* margin-right: auto; */
+  /* margin-left: auto; */
+  margin: 0 auto;
+}
+ 
 .nav-bg {
-    background-color: var(--secundario);
+  background-color: var(--secundario);
 }
-
-.hero{
-    background-image: url("../IMG/Hero.jpg");
-    background-position: center;
-    background-size: cover;
-    position: relative;
-    min-height: 45rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+ 
+.hero {
+  background-image: url(../img/hero.jpg); /* ../ es para regresar un nivel
+    de directorio ya que la carpeta "img" está afuera de "CSS" */
+  background-repeat: no-repeat; /* Sirve para evitar la repetición de la imagen cuando es pequeña */
+  background-size: cover; /*Sirve para cubir la imagen con todo el tamaño*/
+  height: 450px; /*Alto del elemento hero*/
+  position: relative; /*Para manipular la posición. El padre siempre
+    debe ser relative*/
 }
-
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.48);
-}
-
+ 
 .contenido-hero {
-    position: relative;
-    z-index: 1;
-    color: var(--blanco);
-    width: min(90%, 80rem);
+  position: absolute; /*Para manipular la posición. El hijo siempre
+    debe ser absolute*/
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  /*Alinear vertical y horizontalmente*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-
+ 
+.contenido-hero p,
 .contenido-hero h2 {
-    margin: 0;
-    font-size: clamp(3rem, 6vw, 5.6rem);
+  color: var(--blanco);
+}
+ 
+
+.ubicacion svg{
+    transform: translateX(-1px);
 }
 
-.ubicacion p {
-    font-size: 2.2rem;
+.ubicacion {
+  display: flex;
+  align-items: center;
+}
+ 
+.boton {
+  background-color: var(--secundario);
+  color: var(--blanco);
+  text-transform: uppercase; /* Convertir el texto en mayúsculas */
+  text-decoration: none;
+  font-weight: bold;
+  padding: 1rem 3rem;
+  margin-top: 3rem;
+  border-radius: 0.5rem;
+  width: 90%;
+  text-align: center;
+}
+ 
+@media (min-width: 768px) {
+  .boton {
+    width: auto;
+  }
 }
