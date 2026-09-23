@@ -132,10 +132,97 @@ h3 {
   border-radius: 0.5rem;
   width: 90%;
   text-align: center;
+  border:none; /* Remueve el borde del boton dentro del formulario */
 }
  
 @media (min-width: 768px) {
   .boton {
     width: auto;
   }
+}
+
+.boton:hover {
+  background-color: var(--primario);
+  color: var(--oscuro);
+  cursor: pointer;
+}
+
+/* Servicios */
+.servicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .servicios {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    
+  }
+}
+
+.servicio h3 {
+  color: var(--secundario);
+  font-weight: normal;
+}
+
+.servicio p{
+  line-height: 2;
+  text-align: center;
+}
+
+.servicio .iconos{
+  height: 15rem;
+  width: 15rem;
+  background-color: var(--primario);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.formulario {
+  background-color: var(--gris);
+  width: min(60, 100%);
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.formulario fieldset {
+  border: none;
+}
+
+.formulario legend {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: var(--primario)
+}
+
+.campo {
+  margin-bottom: 1rem;
+}
+
+.campo label{
+  color: var(--blanco);
+  font-weight: bold;
+  margin-bottom: .5rem;
+  display: block;
+}
+
+.input-text {
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: .5rem;
+  border: none;
+}
+
+.campo textarea{
+  height: 20rem;
 }
